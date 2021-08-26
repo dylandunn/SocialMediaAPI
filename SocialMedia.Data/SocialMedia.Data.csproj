@@ -86,9 +86,9 @@
   <ItemGroup>
     <Compile Include="Comment.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202108250020561_PocoAdded.cs" />
-    <Compile Include="Migrations\202108250020561_PocoAdded.Designer.cs">
-      <DependentUpon>202108250020561_PocoAdded.cs</DependentUpon>
+    <Compile Include="Migrations\202108262212096_NewMigration.cs" />
+    <Compile Include="Migrations\202108262212096_NewMigration.Designer.cs">
+      <DependentUpon>202108262212096_NewMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -100,8 +100,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108250020561_PocoAdded.resx">
-      <DependentUpon>202108250020561_PocoAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108262212096_NewMigration.resx">
+      <DependentUpon>202108262212096_NewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
