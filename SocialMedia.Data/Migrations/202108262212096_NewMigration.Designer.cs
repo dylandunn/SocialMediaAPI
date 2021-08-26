@@ -7,13 +7,13 @@ namespace SocialMedia.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class PocoAdded : IMigrationMetadata
+    public sealed partial class NewMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PocoAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NewMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108250020561_PocoAdded"; }
+            get { return "202108262212096_NewMigration"; }
         }
         
         string IMigrationMetadata.Source
