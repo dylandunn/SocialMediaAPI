@@ -15,7 +15,7 @@ namespace SocialMedia.Data
         public string Title { get; set; }
         public string Text { get; set; }
         public virtual List<Comment> Comments { get; set; } = new List<Comment>();
-        [ForeignKey(nameof(AuthorId))]
+        
         public Guid AuthorId { get; set; }
     }
 }

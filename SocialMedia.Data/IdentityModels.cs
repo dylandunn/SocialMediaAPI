@@ -36,17 +36,18 @@ namespace SocialMedia.Data
         {
             return new ApplicationDbContext();
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
+            modelBuilder
+                .Configurations
+                .Add(new IdentityUserLoginConfiguration())
+                .Add(new IdentityUserRoleConfiguration());
+        }
     }
-    public override void OnModelCreating(DbModelBuilder modelBuilder)
-    {
-        modelBuilder
-            .Conventions
-            .Remove<PluralizingTableNameConvention>();
-        modelBuilder
-            .Configurations
-            .Add(new IdentityUserLoginConfiguration())
-            .Add(new IdentityUserRoleConfiguration());
-    }
+    
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {
         public IdentityUserLoginConfiguration()
