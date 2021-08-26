@@ -43,10 +43,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Comment_Models\CommentCreate.cs" />
+    <Compile Include="Comment_Models\CommentDetail.cs" />
+    <Compile Include="Comment_Models\CommentEdit.cs" />
+    <Compile Include="Comment_Models\CommentListItem.cs" />
     <Compile Include="PostModels\PostCreate.cs" />
     <Compile Include="PostModels\PostListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SocialMedia.Data\SocialMedia.Data.csproj">
+      <Project>{A5D5B5C2-2E4C-432C-9FA0-B75F9E7CA537}</Project>
+      <Name>SocialMedia.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
