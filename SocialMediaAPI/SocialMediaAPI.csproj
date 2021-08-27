@@ -313,10 +313,6 @@
       <Project>{A5D5B5C2-2E4C-432C-9FA0-B75F9E7CA537}</Project>
       <Name>SocialMedia.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SocialMedia.Models\SocialMedia.Models.csproj">
-      <Project>{C6B0ECAC-5C27-44A6-B6DD-8538AA9364E9}</Project>
-      <Name>SocialMedia.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SocialMedia.Services\SocialMedia.Services.csproj">
       <Project>{7562CA04-2729-42A8-8E63-9EF4FDF95DA5}</Project>
       <Name>SocialMedia.Services</Name>
