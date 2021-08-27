@@ -45,8 +45,10 @@ namespace SocialMedia.Services.PostServices
                                 {
                                     Id = e.Id,
                                     Title = e.Title,
+                                    Text = e.Text,
+                                    Comments =e.Comments
 
-                                }
+    }
                                );
                 return query.ToArray();
             }

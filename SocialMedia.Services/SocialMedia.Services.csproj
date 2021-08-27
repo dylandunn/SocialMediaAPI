@@ -55,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommentService\CommentService.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="PostServices\PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
