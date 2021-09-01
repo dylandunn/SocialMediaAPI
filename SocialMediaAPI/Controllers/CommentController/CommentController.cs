@@ -2,6 +2,7 @@
 using SocialMedia.Models.CommentModels;
 using SocialMedia.Services.CommentService;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -49,8 +50,15 @@ namespace SocialMediaAPI.Controllers.CommentController
                 return BadRequest();
 
             var service = CreateCommentService();
-            var comment = await service.GetByPostId(id);
-            return Ok(comment);
+
+            var comments = await service.GetByPostId(id);
+
+            if (!comments.Any()) // see if there are any and if not return NotFound()
+            {
+                return NotFound();
+            }
+
+            return Ok(comments);
         }
 
         [HttpPut]
