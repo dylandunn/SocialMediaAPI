@@ -86,27 +86,24 @@ namespace SocialMedia.Services.CommentService
             }
         }
 
-        public async Task<CommentDetail> GetByPostId(int id)
+        // if there are multiple comments per post we want to return all of them
+        public async Task<IEnumerable<CommentDetail>> GetByPostId(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var comment =
+                // I would get the post and then return its comments
+                var post =
                     await
                     ctx
-                    .Comment
-                    .SingleOrDefaultAsync(c => c.PostId == id);
-                if(comment == null)
-                {
-                    return null;
-                }
-                return new CommentDetail
-                {
-                    Id = comment.Id,
-                    Text = comment.Text,
-                    Replies = comment.Replies,
-                    PostId = comment.PostId
-                };
+                    .Post
+                    .SingleOrDefaultAsync(c => c.Id == id);
 
+                if(post == null)
+                {
+                    return Enumerable.Empty<CommentDetail>(); // avoid returning null out of the controller so return an empty enumerable instead
+                }
+
+                return post.Comments?.Select(c => new CommentDetail { Id = c.Id, Text = c.Text, PostId = c.PostId }).ToList() ?? Enumerable.Empty<CommentDetail>();
             }
         }
 

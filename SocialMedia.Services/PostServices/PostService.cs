@@ -1,4 +1,5 @@
 ﻿using SocialMedia.Data;
+using SocialMedia.Models.CommentModels;
 using SocialMedia.Models.PostModels;
 using System;
 using System.Collections.Generic;
@@ -46,10 +47,8 @@ namespace SocialMedia.Services.PostServices
                                     Id = e.Id,
                                     Title = e.Title,
                                     Text = e.Text,
-                                    Comments =e.Comments
-
-    }
-                               );
+                                    Comments = e.Comments.Select(c => new CommentListItem { Text = c.Text, Id = c.Id }).ToList()
+                                });
                 return query.ToArray();
             }
         }
